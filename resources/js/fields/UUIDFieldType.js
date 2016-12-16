@@ -36,6 +36,20 @@
             $(function () {
 
 /* -- _this.options gives us access to the $jsonVars that our FieldType passed down to us */
+//console.log(_this.options)
+				if(_this.options.settings.regenerate){
+					$('#'+_this.options.namespace+'-regenerate').on('click', function(e){
+						e.preventDefault();
+						Craft.postActionRequest('/UUID/generateUUID', {
+						    uuidFormat: _this.options.settings.uuidFormat,
+						    length: _this.options.settings.length,
+						    useSpecials: _this.options.settings.useSpecials
+					    }, function(response) {
+							$('#'+_this.options.namespace).val(response.uuid);
+							$('#'+_this.options.namespace).prev().text(response.uuid);
+						});
+					})
+				}
 
             });
         }

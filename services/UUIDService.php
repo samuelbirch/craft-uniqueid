@@ -17,8 +17,11 @@ class UUIDService extends BaseApplicationComponent
 {
     /**
      */
-    public function exampleService()
+    public function generateUUID($uuidFormat=false, $length=64, $useSpecials=false)
     {
+	    if($uuidFormat) return StringHelper::UUID();
+	    
+	    return StringHelper::randomString($length, $useSpecials);
     }
 
 }

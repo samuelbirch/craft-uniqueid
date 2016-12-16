@@ -20,12 +20,18 @@ class UUIDController extends BaseController
      * @var    bool|array Allows anonymous access to this controller's actions.
      * @access protected
      */
-    protected $allowAnonymous = array('actionIndex',
-        );
+    protected $allowAnonymous = false;
 
     /**
      */
-    public function actionIndex()
+    public function actionGenerateUUID()
     {
+	    $uuidFormat = craft()->request->getParam('uuidFormat');
+	    $length = craft()->request->getParam('length');
+	    $useSpecials = craft()->request->getParam('useSpecials');
+	    
+	    $UUID = craft()->uUID->generateUUID($uuidFormat, $length, $useSpecials);
+	    
+	    $this->returnJson(array('uuid'=>$UUID));
     }
 }

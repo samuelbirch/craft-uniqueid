@@ -1,0 +1,56 @@
+{#
+/**
+ * UUID plugin for Craft CMS
+ *
+ * UUIDFieldType HTML
+ *
+ * @author    madebyjam
+ * @copyright Copyright (c) 2016 madebyjam
+ * @link      http://madebyjam.com
+ * @package   UUID
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.lightswitchField({
+    label: "UUID Formatted"|t,
+    id: 'uuidFormat',
+    name: 'uuidFormat',
+    instructions: "Should the UUID use the same formatting as craft?"|t,
+    on: settings.uuidFormat,
+}) }}
+
+
+
+{{ forms.selectField({
+	label: "String Length"|t,
+	instructions: "",
+    id: "size",
+    class: "canDisable",
+    fieldClass: "",
+    options: sizeOptions,
+    name: "size",
+    value: settings.size,
+}) }}
+
+{#
+{{ forms.lightswitchField({
+    label: "Use Special Characters"|t,
+    id: 'useSpecials',
+    name: 'useSpecials',
+    class: "canDisable",
+    instructions: 'Should the UUID use special characters: `~!@#$%^&*()-_=+[]\{}|;:\'",./<>?"'|t,
+    on: settings.useSpecials,
+}) }}
+#}
+
+
+{{ forms.lightswitchField({
+    label: "Regenerate UUID"|t,
+    id: 'regenerate',
+    name: 'regenerate',
+    instructions: "Can the user regenerate the UUID?"|t,
+    on: settings.regenerate,
+}) }}
