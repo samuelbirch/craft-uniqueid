@@ -1,0 +1,24 @@
+{#
+/**
+ * UUID plugin for Craft CMS
+ *
+ * UUIDFieldType HTML
+ *
+ * @author    madebyjam
+ * @copyright Copyright (c) 2016 madebyjam
+ * @link      https://madebyjam.com
+ * @package   UUID
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    id: id ~ 'someField',
+    class: 'nicetext',
+    name: name ~ '[someField]',
+    value: values.someField,
+    errors: values.getErrors('someField'),
+    required: false,
+}) }}

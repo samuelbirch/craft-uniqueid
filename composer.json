@@ -1,0 +1,14 @@
+{
+	"name": "https://github.com/samuelbirch/craft-uuid/uuid",
+	"description": "Generate a UUID",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "madebyjam",
+			"homepage": "https://madebyjam.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}
