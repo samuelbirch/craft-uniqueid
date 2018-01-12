@@ -13,7 +13,7 @@
 
 namespace Craft;
 
-class UniqueIDFieldType extends BaseFieldType
+class UniqueIDFieldType extends BaseFieldType implements IPreviewableFieldType
 {
     /**
      * @return mixed
