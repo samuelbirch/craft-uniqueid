@@ -1,26 +1,26 @@
 <?php
 /**
- * UUID plugin for Craft CMS
+ * UniqueID plugin for Craft CMS
  *
- * UUID FieldType
+ * UniqueID FieldType
  *
  * @author    madebyjam
  * @copyright Copyright (c) 2016 madebyjam
  * @link      https://madebyjam.com
- * @package   UUID
+ * @package   UniqueID
  * @since     1.0.0
  */
 
 namespace Craft;
 
-class UUIDFieldType extends BaseFieldType
+class UniqueIDFieldType extends BaseFieldType
 {
     /**
      * @return mixed
      */
     public function getName()
     {
-        return Craft::t('UUID');
+        return Craft::t('UniqueID');
     }
     
     protected function defineSettings()
@@ -35,11 +35,10 @@ class UUIDFieldType extends BaseFieldType
     
     public function getSettingsHtml()
     {
-	    craft()->templates->includeJsResource('uuid/js/fields/UUIDFieldTypeSettings.js');
+	    craft()->templates->includeJsResource('unquieid/js/fields/UniqueIDFieldTypeSettings.js');
 	    
-	    return craft()->templates->render('uuid/fields/UUIDFieldTypeSettings.twig', array(
+	    return craft()->templates->render('uniqueid/fields/UniqueIDFieldTypeSettings.twig', array(
 		    'settings' => $this->getSettings(),
-		    'sizeOptions' => array(8=>8, 16=>16, 32=>32, 64=>64, 128=>128),
 	    ));
     }
 
@@ -64,8 +63,8 @@ class UUIDFieldType extends BaseFieldType
 
 /* -- Include our Javascript & CSS */
 
-        craft()->templates->includeCssResource('uuid/css/fields/UUIDFieldType.css');
-        craft()->templates->includeJsResource('uuid/js/fields/UUIDFieldType.js');
+        craft()->templates->includeCssResource('uniqueid/css/fields/UniqueIDFieldType.css');
+        craft()->templates->includeJsResource('uniqueid/js/fields/UniqueIDFieldType.js');
 
 /* -- Variables to pass down to our field.js */
 
@@ -83,7 +82,7 @@ class UUIDFieldType extends BaseFieldType
         );
 
         $jsonVars = json_encode($jsonVars);
-        craft()->templates->includeJs("$('#{$namespacedId}-field').UUIDFieldType(" . $jsonVars . ");");
+        craft()->templates->includeJs("$('#{$namespacedId}-field').UniqueIDFieldType(" . $jsonVars . ");");
 
 /* -- Variables to pass down to our rendered template */
 
@@ -95,7 +94,7 @@ class UUIDFieldType extends BaseFieldType
             'settings' => $this->getSettings(),
         );
 
-        return craft()->templates->render('uuid/fields/UUIDFieldType.twig', $variables);
+        return craft()->templates->render('uniqueid/fields/UniqueIDFieldType.twig', $variables);
     }
 
     /**
@@ -115,15 +114,6 @@ class UUIDFieldType extends BaseFieldType
     {
         $settings = $this->getSettings();
 	    
-	    if(!$value){
-		    
-		    if($settings['uuidFormat']){
-			     $value = StringHelper::UUID();
-		    }else{
-			     //$value = StringHelper::randomString($settings['size'], $settings['useSpecials']);
-			     $value = craft()->uUID->generateUUID($settings['uuidFormat'], $settings['size'], $settings['useSpecials']);
-		    }
-        }
-        return $value;
+	    return $value;
     }
 }

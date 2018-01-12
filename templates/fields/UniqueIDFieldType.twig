@@ -1,13 +1,13 @@
 {#
 /**
- * UUID plugin for Craft CMS
+ * UniqueID plugin for Craft CMS
  *
- * UUIDFieldType HTML
+ * UniqueIDFieldType HTML
  *
  * @author    madebyjam
  * @copyright Copyright (c) 2016 madebyjam
  * @link      https://madebyjam.com
- * @package   UUID
+ * @package   UniqueID
  * @since     1.0.0
  */
 #}
@@ -16,4 +16,4 @@
 
 <p>{{ values }}</p>
 <input type="hidden" id="{{ id }}" name="{{ name }}" value="{{ values }}" />
-{% if settings.regenerate %}<button class="btn" id='{{id}}-regenerate'>Regenerate</button>{% endif %}
+{% if settings.regenerate %}<button class="btn" id='{{id}}-regenerate'>Generate</button>{% endif %}

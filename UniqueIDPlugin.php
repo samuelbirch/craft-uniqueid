@@ -1,19 +1,19 @@
 <?php
 /**
- * UUID plugin for Craft CMS
+ * UniqueID plugin for Craft CMS
  *
- * Generate a UUID
+ * Generate a UniqueID
  *
  * @author    madebyjam
  * @copyright Copyright (c) 2016 madebyjam
  * @link      https://madebyjam.com
- * @package   UUID
+ * @package   UniqueID
  * @since     1.0.0
  */
 
 namespace Craft;
 
-class UUIDPlugin extends BasePlugin
+class UniqueIDPlugin extends BasePlugin
 {
     /**
      * @return mixed
@@ -27,7 +27,7 @@ class UUIDPlugin extends BasePlugin
      */
     public function getName()
     {
-         return Craft::t('UUID');
+         return Craft::t('UniqueID');
     }
 
     /**
@@ -35,7 +35,7 @@ class UUIDPlugin extends BasePlugin
      */
     public function getDescription()
     {
-        return Craft::t('Generate a UUID');
+        return Craft::t('Generate a UniqueID');
     }
 
     /**

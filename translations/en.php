@@ -1,13 +1,13 @@
 <?php
 /**
- * UUID plugin for Craft CMS
+ * UniqueID plugin for Craft CMS
  *
- * UUID Translation
+ * UniqueID Translation
  *
  * @author    madebyjam
  * @copyright Copyright (c) 2016 madebyjam
  * @link      https://madebyjam.com
- * @package   UUID
+ * @package   UniqueID
  * @since     1.0.0
  */
 
